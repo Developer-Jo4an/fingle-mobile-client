@@ -1,13 +1,27 @@
-import { View, Text, ScrollView } from 'react-native'
+import { FlatList } from 'react-native'
+import Header from '../header/Header'
+import Total from '../total/Total'
+import Accounts from '../accounts/Accounts'
+import HomeProvider from './HomeProvider'
 
-import { HomeContainerStyles } from './HomeStyles'
 import { containerStyles } from '../../../styles/global'
-import Header from '../header/Header';
 
 export default function Home () {
+	const data = [
+		{ key: 'Header', component: <Header /> },
+		{ key: 'Total', component: <Total /> },
+		{ key: 'Accounts', component: <Accounts /> },
+	]
+
 	return (
-		<ScrollView style={ containerStyles }>
-			<Header/>
-		</ScrollView>
+		<HomeProvider>
+			<FlatList
+				data={data}
+				renderItem={({ item }) => item.component}
+				keyExtractor={item => item.key}
+				style={containerStyles}
+				contentContainerStyle={{ gap: 10 }}
+			/>
+		</HomeProvider>
 	)
 }

@@ -1,4 +1,4 @@
-export const OpaqueLoaderStyles = {
+export const opaqueLoaderStyles = {
 	flex: 1,
 	justifyContent: 'center',
 	alignItems: 'center',

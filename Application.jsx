@@ -6,7 +6,8 @@ import { useAppContext } from './AppProvider'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { getCommonPath, userId } from './functions/functions'
-import { ApplicationStyles } from './ApplicationStyles'
+
+import { applicationStyles } from './application-styles'
 
 const Application = () => {
 	const { user } = useAppContext()
@@ -35,7 +36,7 @@ const Application = () => {
 	if (!userState._id) return <OpaqueLoader />
 
 	return (
-		<View style={ApplicationStyles}>
+		<View style={ applicationStyles }>
 			<Navigation />
 			<StatusBar backgroundColor='white' barStyle='dark-content'/>
 		</View>

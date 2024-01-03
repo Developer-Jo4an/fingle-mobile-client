@@ -1,10 +1,10 @@
 import { ActivityIndicator, View, Text } from 'react-native'
 
-import { OpaqueLoaderStyles } from './OpaqueLoaderStyles'
+import { opaqueLoaderStyles } from './opaque-loader-styles'
 
 export default function OpaqueLoader ()  {
 	return (
-		<View style={OpaqueLoaderStyles}>
+		<View style={ opaqueLoaderStyles }>
 			<ActivityIndicator/>
 			<Text>Loading...</Text>
 		</View>

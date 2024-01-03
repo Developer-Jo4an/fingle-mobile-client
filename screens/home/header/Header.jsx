@@ -1,44 +1,75 @@
-import {View, Text, TouchableNativeFeedback, Image, Alert} from 'react-native'
+import { View, Text, TouchableNativeFeedback, Image } from 'react-native'
 
 import { useAppContext } from '../../../AppProvider'
-import { HeaderStyles } from './HeaderStyles'
-import { rippleColor } from '../../../styles/global'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBell, faGear } from '@fortawesome/free-solid-svg-icons'
 import { Buffer } from 'buffer'
+import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
+
+import {
+	mainGoldColor,
+	mainGoldDarkColor,
+	mainGreenColor,
+	mainGreenDarkColor,
+} from '../../../styles/global'
+import { styles } from './header-styles'
 
 const Header = () => {
 
 	const { user } = useAppContext()
 	const [userState, _] = user
 
+	const { subscriptionLevel, avatar, nickname } = userState
+
+	const navigation = useNavigation()
+
 	return (
-		<View style={ HeaderStyles.header }>
-			<View style={ HeaderStyles.headerUserInfo }>
-				<View style={ HeaderStyles.headerImgWrapper }>
+		<View style={ styles.header }>
+			<View style={ styles.headerUserInfo }>
+				<View style={ styles.headerImgWrapper(subscriptionLevel) }>
 					<Image
-						source={{ uri: `data:image/jpeg;base64,${Buffer.from(userState.avatar).toString('base64')}` }}
+						source={{ uri: `data:image/jpeg;base64,${Buffer.from(avatar).toString('base64')}` }}
 						style={{ width: 60, height: 60, borderRadius: 30 }}
 					></Image>
 				</View>
-				<View style={ HeaderStyles.headerUserInfoWrapper }>
-					<Text>@{ userState.nickname }</Text>
-					<View style={ HeaderStyles.headerUserSubscriptionLevel }>
-						<Text>{ userState.subscriptionLevel }</Text>
-					</View>
+				<View style={ styles.headerUserInfoWrapper }>
+					<Text style={ styles.headerUserInfoNickname }>@{ nickname }</Text>
+						<LinearGradient
+							colors={ subscriptionLevel === 'Standard' ?
+								[mainGreenColor, mainGreenDarkColor]
+								:
+								[mainGoldColor, mainGoldDarkColor]
+							}
+							start={{ x: 0, y: 0.5 }}
+							end={{ x: 1, y: 1 }}
+							style={ styles.headerUserSubscriptionLevelGradient }
+						>
+							<TouchableNativeFeedback background={ TouchableNativeFeedback.Ripple()}>
+								<View style={styles.headerUserSubscriptionLevel}>
+									<Text style={ styles.headerUserSubscriptionLevelText }>{ subscriptionLevel }</Text>
+								</View>
+							</TouchableNativeFeedback>
+						</LinearGradient>
 				</View>
 			</View>
 
-			<View style={ HeaderStyles.headerButtons }>
-				<View style={{ borderRadius: 20, overflow: 'hidden' }}>
-					<TouchableNativeFeedback background={ TouchableNativeFeedback.Ripple(rippleColor) }>
-						<View style={ HeaderStyles.headerButtonWrapper }><FontAwesomeIcon icon={ faBell }/></View>
+			<View style={ styles.headerButtons }>
+				<View style={ styles.headerBorderButtonClickEffect }>
+					<TouchableNativeFeedback
+						background={ TouchableNativeFeedback.Ripple() }
+						onPress={() => navigation.navigate('Notifications')}
+					>
+						<View style={ styles.headerButtonWrapper }><FontAwesomeIcon icon={ faBell }/></View>
 					</TouchableNativeFeedback>
 				</View>
 
-				<View style={{ borderRadius: 20, overflow: 'hidden' }}>
-					<TouchableNativeFeedback background={ TouchableNativeFeedback.Ripple(rippleColor) }>
-						<View style={ HeaderStyles.headerButtonWrapper }><FontAwesomeIcon icon={ faGear }/></View>
+				<View style={ styles.headerBorderButtonClickEffect }>
+					<TouchableNativeFeedback
+						background={ TouchableNativeFeedback.Ripple() }
+						onPress={() => navigation.navigate('Settings')}
+					>
+						<View style={ styles.headerButtonWrapper }><FontAwesomeIcon icon={ faGear }/></View>
 					</TouchableNativeFeedback>
 				</View>
 			</View>
