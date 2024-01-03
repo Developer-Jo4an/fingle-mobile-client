@@ -11,9 +11,9 @@ export default function Navigation () {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
-				<Stack.Screen options={{ headerShown: false }} name={'Home'} component={Home}/>
-				<Stack.Screen options={{ headerShown: false }} name={'Settings'} component={Settings}/>
-				<Stack.Screen options={{ headerShown: false }} name={'Notifications'} component={Notifications}/>
+				<Stack.Screen options={{ headerShown: false }} name={'Home'} component={ Home }/>
+				<Stack.Screen options={{ headerShown: false }} name={'Settings'} component={ Settings }/>
+				<Stack.Screen options={{ headerShown: false }} name={'Notifications'} component={ Notifications }/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	)

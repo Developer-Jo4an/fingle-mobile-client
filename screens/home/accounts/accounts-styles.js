@@ -1,4 +1,4 @@
-import {mainGrayBackground} from '../../../styles/global';
+import { mainGrayBackground } from '../../../styles/global';
 
 export const styles = {
     accountsWrapper: {
@@ -19,5 +19,6 @@ export const styles = {
     },
     accountSliderContentStyles: {
         gap: 10,
+	    padding: 10
     }
 }

@@ -1,4 +1,4 @@
-import { Modal, View, Text } from 'react-native'
+import { Modal } from 'react-native'
 
 import { styles } from './modal-window-center'
 
@@ -8,8 +8,9 @@ const ModalWindowCenter = ({ visible, ...props }) => {
         <Modal
             visible={visible[0]}
             animationType={'fade'}
-        >
-        </Modal>
+            transparent
+            statusBarTranslucent
+        >{ props.children }</Modal>
     )
 }
 

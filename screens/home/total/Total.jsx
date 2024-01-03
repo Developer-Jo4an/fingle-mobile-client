@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { Text } from 'react-native'
 import Tile from '../../../components/tile/Tile'
 import TileHeader from '../../../components/tile-header/TileHeader'
 

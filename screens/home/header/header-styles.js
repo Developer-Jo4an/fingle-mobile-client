@@ -14,6 +14,8 @@ export const styles = {
 
 		borderBottomLeftRadius: 20,
 		borderBottomRightRadius: 20,
+
+		elevation: 5
 	},
 	headerUserInfo: {
 		flexDirection: 'row',

@@ -1,11 +1,11 @@
 import { View } from 'react-native'
 
-import { styles } from './tyle-styles'
+import { styles } from './tile-styles'
 
-const Tile = ({ children }) => {
+const Tile = ({ moreTileStyles, moreTileContentStyles,  ...props }) => {
     return (
-        <View style={ styles.tileStyles }>
-            <View style={ styles.tileContent }>{ children }</View>
+        <View style={{ ...styles.tileStyles, ...moreTileStyles }}>
+            <View style={{ ...styles.tileContent, ...moreTileContentStyles }}>{ props.children }</View>
         </View>
     )
 }
