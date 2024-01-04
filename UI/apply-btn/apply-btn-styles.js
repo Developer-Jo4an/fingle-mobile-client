@@ -10,6 +10,8 @@ export const styles = {
 
 		opacity: disabled ? 0.5 : 1,
 
+		elevation: disabled ? 0 : 3,
+
 		borderStyle: disabled ? 'solid' : null,
 		borderWidth: disabled ? 2 : 0,
 		borderColor: disabled ? mainGrayBackground : 'none',

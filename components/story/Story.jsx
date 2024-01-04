@@ -1,11 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Image } from 'react-native'
 
 import { styles } from './story-style'
 
-const Story = ({ children }) => {
+const Story = ({ img }) => {
+
 	return (
 		<View style={ styles.story }>
-			<View style={ styles.storyWrapper }><Text style={ styles.storyText }>{ children }</Text></View>
+			<Image
+				source={ img }
+				style={ styles.storyImg }
+			/>
 		</View>
 	)
 }

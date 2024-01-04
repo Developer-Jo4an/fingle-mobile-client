@@ -8,6 +8,8 @@ export const styles = {
 
 		backgroundColor: '#fff',
 
+		elevation: disabled ? 0 : 3,
+
 		opacity: disabled ? 0.5 : 1,
 
 		borderStyle: disabled ? 'solid' : null,

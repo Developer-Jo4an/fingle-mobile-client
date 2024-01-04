@@ -10,12 +10,23 @@ const accountLogicFunc = (state, action) => {
 		case 'set-type': return { ...state, accountType: action.accountType }
 		case 'set-account': return action.account
 		case 'reload-account': return { accountName: '', count: 0, accountType: 'cash' }
+		case 'reload-modified-account': return { _id: 'none', accountName: '', count: 0, accountType: 'cash' }
 		default: return state
 	}
 }
 
-export const newAccountDispatch = (state, action) => accountLogicFunc(state, action)
-export const modifiedAccountDispatch = (state, action) => accountLogicFunc(state, action)
+const budgetLogicFunc = (state, action) => {
+	switch (action.type) {
+
+		default: return state
+	}
+}
+
+const newAccountDispatch = (state, action) => accountLogicFunc(state, action)
+const modifiedAccountDispatch = (state, action) => accountLogicFunc(state, action)
+
+const newBudgetDispatch = (state, action) => budgetLogicFunc(state, action)
+const modifiedBudgetDispatch = (state, action) => budgetLogicFunc(state, action)
 
 const HomeProvider = ({ children }) => {
 
@@ -25,7 +36,13 @@ const HomeProvider = ({ children }) => {
 	        newAccount: useReducer(newAccountDispatch, { accountName: '', count: 0, accountType: 'cash' }),
 			modifiedAccountMW: useState(false),
 			modifiedAccount: useReducer(modifiedAccountDispatch, { _id: 'none', accountName: '', count: 0, accountType: 'cash' }),
-			modifiedAccountCopy: useState({ _id: 'none', accountName: '', count: 0, accountType: 'cash' })
+			modifiedAccountCopy: useState({ _id: 'none', accountName: '', count: 0, accountType: 'cash' }),
+
+	        addBudgetMW: useState(false),
+	        newBudget: useReducer(newBudgetDispatch, { budgetName: '', count: 0, interval: [new Date(), new Date()], selectedCategories: [] }),
+	        modifiedBudgetMW: useState(false),
+	        modifiedBudget: useReducer(modifiedBudgetDispatch, { _id: 'none', budgetName: '', count: 0, interval: [new Date(), new Date()], selectedCategories: [] }),
+	        modifiedBudgetCopy: useState({ _id: 'none', budgetName: '', count: 0, interval: [new Date(), new Date()], selectedCategories: [] }),
         }}>{ children }</HomeContext.Provider>
     )
 }

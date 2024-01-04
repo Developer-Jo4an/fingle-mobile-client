@@ -8,13 +8,14 @@ export const styles = {
 
 		backgroundColor: '#fff',
 
+		elevation: disabled ? 0 : 3,
+
+
 		opacity: disabled ? 0.5 : 1,
 
 		borderStyle: disabled ? 'solid' : null,
 		borderWidth: disabled ? 2 : 0,
 		borderColor: disabled ? mainGrayBackground : 'none',
-
-		elevation: disabled ? 0 : 3,
 	}),
 	deleteBtnWrapper: {
 		width: 80,

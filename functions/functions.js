@@ -1,9 +1,12 @@
 import axios from 'axios'
 import { Alert } from 'react-native'
+import { Platform as Platrorm } from 'expo-modules-core/src'
 
-export const getCommonPath = 'http://192.168.1.107:5000'
+export const getCommonPath = 'http://192.168.1.66:5000'
 export const userId = '64df628be6b9b3d99d542be5'
-export const keyGen = _id => Math.random().toString() + '260627062003200315265252' + _id ? _id : Math.random().toString()
+export const ENCRYPTEDID = '260627062003200315265252'
+export const keyGen = _id => Math.random().toString() + ENCRYPTEDID + _id ? _id : Math.random().toString()
+export const platform = Platrorm.OS
 
 export const userRequestFunc = async userDispatch => {
 	try {

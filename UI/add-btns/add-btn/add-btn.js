@@ -3,6 +3,7 @@ import { mainGreenColor } from '../../../styles/global';
 export const styles = {
     addBtn: {
         borderRadius: 20,
+
         overflow: 'hidden'
     },
     addBtnWrapper: disabled => ({

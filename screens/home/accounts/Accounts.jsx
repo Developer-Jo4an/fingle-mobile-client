@@ -5,8 +5,8 @@ import BetweenDistance from '../../../UI/beetween-distance/BetweenDistance'
 import VerticalSlider from '../../../components/sliders/vertical-slider/VerticalSlider'
 import Account from '../../../components/account/Account'
 import ModalWindowCenter from '../../../components/modal-windows/modal-window-center/ModalWindowCenter'
-import AddAccountMW from '../modal-windows/add-account-mw/AddAccountMW'
-import ModifiedAccountMW from '../modal-windows/modified-account-mw/ModifiedAccountMW'
+import AddAccountMW from '../modal-windows/account-modal-windows/AddAccountMW'
+import ModifiedAccountMW from '../modal-windows/account-modal-windows/ModifiedAccountMW'
 
 import { useAppContext } from '../../../AppProvider'
 import { useHomeContext } from '../general/HomeProvider'
@@ -37,7 +37,7 @@ const Accounts = () => {
             <BetweenDistance styles={{ height: 10 }}/>
             <VerticalSlider
                 data={ Object.values(userState.accounts) }
-                renderItemFunc={ account => <Account key={ keyGen(account._id) }  account={ account } clickFunction={ clickToCard }/> }
+                renderItemFunc={ account => <Account key={ keyGen(account._id) } account={ account } clickFunction={ clickToCard }/> }
                 listStyles={ styles.accountsSliderStyles }
                 contentStyles={ styles.accountSliderContentStyles }
             />

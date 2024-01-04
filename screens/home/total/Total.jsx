@@ -12,7 +12,7 @@ const Total = () => {
     const [userState, _] = user
     const { accounts } = userState
 
-    const getAccountsCount = () => Object.values(accounts).reduce((acc, { count }) => acc + count, 0)
+    const getAccountsCount = () => Object.values(accounts).reduce((acc, { count }) => acc + count, 0).toFixed(2)
 
     const headerLogic = (
         <>

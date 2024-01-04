@@ -1,11 +1,12 @@
 import { FlatList, RefreshControl } from 'react-native'
 import { useState } from 'react'
-
 import Header from '../header/Header'
 import Total from '../total/Total'
 import Accounts from '../accounts/Accounts'
 import HomeProvider from './HomeProvider'
 import Stories from '../stories/Stories'
+import Budgets from '../budgets/Budgets'
+import BetweenDistance from '../../../UI/beetween-distance/BetweenDistance'
 
 import { useAppContext } from '../../../AppProvider'
 import { onRefresh } from '../../../functions/functions'
@@ -17,6 +18,8 @@ export default function Home () {
 		{ key: 'Stories', component: <Stories/>},
 		{ key: 'Total', component: <Total /> },
 		{ key: 'Accounts', component: <Accounts /> },
+		{ key: 'Budgets', component: <Budgets /> },
+		{ key: 'PaddingBottom', component: <BetweenDistance />}
 
 	]
 
@@ -40,6 +43,7 @@ export default function Home () {
 				style={ containerStyles }
 				contentContainerStyle={{ gap: 10 }}
 				nestedScrollEnabled={ true }
+				showsVerticalScrollIndicator={ false }
 			/>
 		</HomeProvider>
 	)

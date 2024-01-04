@@ -16,14 +16,10 @@ export const styles = {
 
 		borderRadius: 30
 	},
-	storyWrapper: {
-		flex: 1,
+	storyImg: {
+		width: '100%',
+		height: '100%',
 
-		overflow: 'hidden',
-
-		borderRadius: 30
-	},
-	storyText: {
-		textAlign: 'center'
+		borderRadius: 25
 	}
 }
