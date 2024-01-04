@@ -14,10 +14,10 @@ import { containerStyles, mainGreenColor } from '../../../styles/global'
 
 export default function Home () {
 	const data = [
-		{ key: 'Header', component: <Header /> },
 		{ key: 'Stories', component: <Stories/>},
 		{ key: 'Total', component: <Total /> },
 		{ key: 'Accounts', component: <Accounts /> },
+
 	]
 
 	const { user } = useAppContext()
@@ -26,9 +26,11 @@ export default function Home () {
 	return (
 		<HomeProvider>
 			<FlatList
+				ListHeaderComponent={() => <Header />}
+				stickyHeaderIndices={[0]}
 				refreshControl={
 				<RefreshControl
-					refreshing= {refreshing }
+					refreshing={ refreshing }
 					onRefresh={() => onRefresh(setRefreshing, user[1]) }
 					colors={[mainGreenColor]}
 				/>}
@@ -37,7 +39,7 @@ export default function Home () {
 				keyExtractor={item => item.key}
 				style={ containerStyles }
 				contentContainerStyle={{ gap: 10 }}
-				nestedScrollEnabled={true}
+				nestedScrollEnabled={ true }
 			/>
 		</HomeProvider>
 	)

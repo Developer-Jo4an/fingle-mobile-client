@@ -30,6 +30,11 @@ export const styles = {
 		borderStyle: 'solid',
 		borderRadius: 35,
 	}),
+	headerUserAvatar: {
+		width: 60,
+		height: 60,
+		borderRadius: 30
+	},
 	headerUserInfoWrapper: {
 		justifyContent: 'center',
 		alignItems: 'flex-start',

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Alert } from 'react-native'
 
-export const getCommonPath = 'http://192.168.67.253:5000'
+export const getCommonPath = 'http://192.168.1.107:5000'
 export const userId = '64df628be6b9b3d99d542be5'
 export const keyGen = _id => Math.random().toString() + '260627062003200315265252' + _id ? _id : Math.random().toString()
 

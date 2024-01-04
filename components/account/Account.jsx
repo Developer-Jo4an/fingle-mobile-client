@@ -1,8 +1,8 @@
-import { TouchableNativeFeedback, View, Text } from 'react-native'
+import {TouchableNativeFeedback, View, Text, Alert} from 'react-native'
 
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { mainGreenColor, mainGreenDarkColor } from '../../styles/global'
+import { clickGrayBackground, mainGreenColor, mainGreenDarkColor } from '../../styles/global'
 import { styles } from './account-styles'
 
 const Account = ({ account, clickFunction }) => {
@@ -22,10 +22,7 @@ const Account = ({ account, clickFunction }) => {
 
     return (
         <View style={ styles.account }>
-            <TouchableNativeFeedback
-                background={TouchableNativeFeedback.Ripple()}
-                onPress={ clickFunction }
-            >
+            <TouchableNativeFeedback onPress={() => clickFunction(account)} background={TouchableNativeFeedback.Ripple(clickGrayBackground)}>
                 <View style={ styles.accountInfoWrapper }>
                     <View style={ styles.accountInfoLeftSection }>
                         <LinearGradient

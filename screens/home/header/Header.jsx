@@ -8,6 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
 
 import {
+	clickGrayBackground,
 	mainGoldColor,
 	mainGoldDarkColor,
 	mainGreenColor,
@@ -30,7 +31,7 @@ const Header = () => {
 				<View style={ styles.headerImgWrapper(subscriptionLevel) }>
 					<Image
 						source={{ uri: `data:image/jpeg;base64,${Buffer.from(avatar).toString('base64')}` }}
-						style={{ width: 60, height: 60, borderRadius: 30 }}
+						style={ styles.headerUserAvatar }
 					></Image>
 				</View>
 				<View style={ styles.headerUserInfoWrapper }>
@@ -45,7 +46,7 @@ const Header = () => {
 							end={{ x: 1, y: 1 }}
 							style={ styles.headerUserSubscriptionLevelGradient }
 						>
-							<TouchableNativeFeedback background={ TouchableNativeFeedback.Ripple()}>
+							<TouchableNativeFeedback background={ TouchableNativeFeedback.Ripple(clickGrayBackground)}>
 								<View style={styles.headerUserSubscriptionLevel}>
 									<Text style={ styles.headerUserSubscriptionLevelText }>{ subscriptionLevel }</Text>
 								</View>
@@ -57,7 +58,7 @@ const Header = () => {
 			<View style={ styles.headerButtons }>
 				<View style={ styles.headerBorderButtonClickEffect }>
 					<TouchableNativeFeedback
-						background={ TouchableNativeFeedback.Ripple() }
+						background={ TouchableNativeFeedback.Ripple(clickGrayBackground) }
 						onPress={() => navigation.navigate('Notifications')}
 					>
 						<View style={ styles.headerButtonWrapper }><FontAwesomeIcon icon={ faBell }/></View>
@@ -66,7 +67,7 @@ const Header = () => {
 
 				<View style={ styles.headerBorderButtonClickEffect }>
 					<TouchableNativeFeedback
-						background={ TouchableNativeFeedback.Ripple() }
+						background={ TouchableNativeFeedback.Ripple(clickGrayBackground) }
 						onPress={() => navigation.navigate('Settings')}
 					>
 						<View style={ styles.headerButtonWrapper }><FontAwesomeIcon icon={ faGear }/></View>

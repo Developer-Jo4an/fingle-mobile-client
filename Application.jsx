@@ -1,4 +1,4 @@
-import { StatusBar, View } from 'react-native'
+import { SafeAreaView, StatusBar, View } from 'react-native'
 import { useEffect } from 'react'
 
 import Navigation from './navigation/Navigation'
@@ -20,10 +20,13 @@ const Application = () => {
 	if (!userState._id) return <OpaqueLoader />
 
 	return (
-		<View style={ applicationStyles }>
-			<Navigation />
-			<StatusBar backgroundColor='white' barStyle='dark-content'/>
-		</View>
+		<SafeAreaView style={{ flex: 1 }}>
+			<View style={ applicationStyles }>
+				<Navigation />
+				<StatusBar backgroundColor='white' barStyle='dark-content'/>
+			</View>
+		</SafeAreaView>
+
 	)
 }
 

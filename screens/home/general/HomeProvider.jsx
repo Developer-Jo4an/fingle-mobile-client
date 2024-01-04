@@ -3,7 +3,7 @@ import React, { useContext, useState, useReducer } from 'react'
 const HomeContext = React.createContext()
 export const useHomeContext = () => useContext(HomeContext)
 
-export const accountDispatch = (state, action) => {
+const accountLogicFunc = (state, action) => {
 	switch (action.type) {
 		case 'set-name': return { ...state, accountName: action.accountName }
 		case 'set-count': return { ...state, count: action.count }
@@ -14,12 +14,18 @@ export const accountDispatch = (state, action) => {
 	}
 }
 
+export const newAccountDispatch = (state, action) => accountLogicFunc(state, action)
+export const modifiedAccountDispatch = (state, action) => accountLogicFunc(state, action)
+
 const HomeProvider = ({ children }) => {
 
     return (
         <HomeContext.Provider value={{
             addAccountMW: useState(false),
-	        newAccount: useReducer(accountDispatch, { accountName: '', count: 0, accountType: 'cash' })
+	        newAccount: useReducer(newAccountDispatch, { accountName: '', count: 0, accountType: 'cash' }),
+			modifiedAccountMW: useState(false),
+			modifiedAccount: useReducer(modifiedAccountDispatch, { _id: 'none', accountName: '', count: 0, accountType: 'cash' }),
+			modifiedAccountCopy: useState({ _id: 'none', accountName: '', count: 0, accountType: 'cash' })
         }}>{ children }</HomeContext.Provider>
     )
 }

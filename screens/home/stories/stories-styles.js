@@ -8,7 +8,6 @@ export const styles = {
 		paddingTop: 20,
 		paddingLeft: 20,
 		paddingRight: 20,
-		paddingBottom: 10
 	},
 	storiesWrapper: {
 

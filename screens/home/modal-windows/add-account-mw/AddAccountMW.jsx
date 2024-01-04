@@ -58,7 +58,7 @@ const AddAccountMW = () => {
 		}).start()
 	})
 
-	Keyboard.addListener('keyboardDidHide', e => {
+	Keyboard.addListener('keyboardDidHide', () => {
 		Animated.timing(modalWindowPosition, {
 			toValue: (windowHeight - 400) / 2,
 			duration: 200,
@@ -130,7 +130,7 @@ const AddAccountMW = () => {
 							<Animated.View style={{...styles.addAccountTypeFocus, transform: [{ translateX: typeSwitch }] }}></Animated.View>
 						</View>
 					</View>
-					<View style={ styles.addAccountEmptyAccount }><Account account={ newAccountState }/></View>
+					<View style={ styles.addAccountEmptyAccount }><Account account={ newAccountState } clickFunction={null}/></View>
 				</View>
 				<View style={ styles.addAccountBtns }>
 					<ApplyBtn clickFunction={ saveAccount }/>

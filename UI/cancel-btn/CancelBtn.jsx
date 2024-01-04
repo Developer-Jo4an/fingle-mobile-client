@@ -3,16 +3,16 @@ import { TouchableNativeFeedback, View } from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
-import { mainRedColor } from '../../styles/global'
+import { clickGrayBackground, mainRedColor } from '../../styles/global'
 import { styles } from './cancel-btn-styles'
 
-const CancelBtn = ({ clickFunction }) => {
+const CancelBtn = ({ clickFunction, disabled }) => {
 
 	return (
-		<View style={ styles.cancelBtn }>
+		<View style={ styles.cancelBtn(disabled) }>
 			<TouchableNativeFeedback
-				background={ TouchableNativeFeedback.Ripple() }
-				onPress={ clickFunction }
+				background={ TouchableNativeFeedback.Ripple( disabled ? 'rgba(255, 255, 255, 0)' : clickGrayBackground, !disabled) }
+				onPress={ disabled ? null : clickFunction }
 			>
 				<View style={ styles.cancelBtnWrapper }>
 					<FontAwesomeIcon icon={ faXmark } size={ 24 } color={ mainRedColor }/>
