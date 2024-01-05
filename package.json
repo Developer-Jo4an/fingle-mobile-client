@@ -19,6 +19,7 @@
     "axios": "^1.6.3",
     "expo": "~49.0.15",
     "expo-linear-gradient": "~12.3.0",
+    "expo-modules-core": "^1.5.12",
     "expo-status-bar": "~1.6.0",
     "fiction-expo-restart": "^2.0.0",
     "react": "18.2.0",
