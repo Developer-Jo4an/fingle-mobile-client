@@ -14,7 +14,8 @@ export const styles = {
 		backgroundColor: modalWindowBackground,
 	},
 	accountMWContentWrapper: modalWindowPosition => ({
-		height: 380,
+		width: '90%',
+		height: 400,
 		justifyContent: 'space-between',
 
 		position: 'absolute',
@@ -23,20 +24,24 @@ export const styles = {
 		borderRadius: 20,
 		padding: 20,
 		backgroundColor: '#fff',
-
-		width: '90%'
 	}),
 	accountForm: {
 		gap: 10,
 	},
 	accountInput: {
-		padding: 10,
+		height: 60,
+
+		flexGrow: 1,
+		flexShrink: 1,
+
+		paddingLeft: 10,
+		paddingRight: 10,
 
 		borderRadius: 20,
 
 		borderStyle: 'solid',
 		borderWidth: 2,
-		borderColor: mainGreenColor
+		borderColor: mainGreenColor,
 	},
 	accountTypeToggle: {
 		justifyContent: 'center',

@@ -78,12 +78,14 @@ const AddAccountMW = () => {
 				<ModalWindowCenterHeader header={'Add account'} clickFunc={() => hideModalWindow(newAccountDispatch, null, addAccountMW, true)}/>
 				<View style={ styles.accountForm }>
 					<TextInput
+						maxLength={ 30 }
 						ref={ newAccountNameRef }
 						style={ styles.accountInput }
 						placeholder={'Name'}
 						onChangeText={ text => newAccountDispatch({ type: 'set-name', accountName: text }) }
 					/>
 					<TextInput
+						maxLength={ 13 }
 						ref={ newAccountCountRef }
 						style={ styles.accountInput }
 						placeholder={'Count'}

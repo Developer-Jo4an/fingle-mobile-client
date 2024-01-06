@@ -108,6 +108,7 @@ const ModifiedAccountMW = () => {
                 <ModalWindowCenterHeader header={'Modified account'} clickFunc={() => hideModalWindow(modifiedAccountDispatch, modifiedAccountCopy, modifiedAccountMW, false)}/>
                 <View style={ styles.accountForm }>
                     <TextInput
+	                    maxLength={ 30 }
                         ref={ modifiedAccountNameRef }
                         style={ styles.accountInput }
                         placeholder={'Name'}
@@ -115,6 +116,7 @@ const ModifiedAccountMW = () => {
                         onChangeText={ text => modifiedAccountDispatch({ type: 'set-name', accountName: text }) }
                     />
                     <TextInput
+	                    maxLength={ 13 }
                         ref={ modifiedAccountCountRef }
                         style={ styles.accountInput }
                         placeholder={'Count'}

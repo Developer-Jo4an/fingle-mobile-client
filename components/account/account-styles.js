@@ -1,4 +1,4 @@
-import { mainGreenColor, mainOrangeColor, mainRedColor } from '../../styles/global';
+import { mainGreenColor, mainOrangeColor, mainRedColor } from '../../styles/global'
 
 export const styles = {
     account: {
@@ -6,9 +6,7 @@ export const styles = {
 
         borderRadius: 10,
 
-        overflow: 'hidden',
-
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
     },
     accountInfoWrapper: {
         height: 45,
@@ -17,8 +15,10 @@ export const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
 
-        paddingLeft: 10,
-        paddingRight: 10,
+	    paddingLeft: 10,
+	    paddingRight: 10,
+
+	    overflow: 'hidden',
     },
     accountInfoLeftSection: {
         flexDirection: 'row',
@@ -67,9 +67,6 @@ export const styles = {
         borderRadius: 3,
 
         backgroundColor: '#fff'
-    },
-    accountCountWrapper: {
-
     },
     accountCountValue: count => ({
         color: count === 0 ? mainOrangeColor : count > 0 ? mainGreenColor : mainRedColor
