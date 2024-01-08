@@ -1,7 +1,5 @@
 import React, { useContext, useState, useReducer } from 'react'
 
-import { faMoneyBill } from '@fortawesome/free-solid-svg-icons'
-
 import { mainGreenColor } from '../../../styles/global'
 
 const HomeContext = React.createContext()
@@ -20,7 +18,7 @@ const defaultBudget = {
 	budgetSelectedCategories: [],
 	budgetSign: {
 		budgetSignColor: mainGreenColor,
-		budgetSign: 'fa-solid fa-money-bill'
+		budgetSignIcon: 'fa-solid fa-money-bill'
 	}
 }
 

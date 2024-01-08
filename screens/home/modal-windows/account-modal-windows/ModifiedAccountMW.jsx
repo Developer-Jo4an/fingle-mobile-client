@@ -9,8 +9,8 @@ import DeleteBtn from '../../../../UI/delete-btn/DeleteBtn'
 
 import axios from 'axios'
 import { useHomeContext } from '../../general/HomeProvider'
-import {useAppContext, windowHeight} from '../../../../AppProvider'
-import { ENCRYPTEDID, getCommonPath, userId } from '../../../../functions/functions'
+import {useAppContext} from '../../../../AppProvider'
+import { ENCRYPTEDID, getCommonPath, userId, windowHeight } from '../../../../functions/functions'
 
 import {
 	hideKeyboardLogic,

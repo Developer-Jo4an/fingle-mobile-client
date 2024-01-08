@@ -1,5 +1,4 @@
-import React, {useContext, useReducer, useState} from 'react'
-import { Dimensions } from 'react-native'
+import React, { useContext, useReducer } from 'react'
 
 const AppContext = React.createContext()
 export const useAppContext = () => useContext(AppContext)
@@ -11,10 +10,6 @@ const userReducer = (state, action) => {
 		default: return state
 	}
 }
-
-export const windowHeight = Dimensions.get('screen').height
-export const windowWidth = Dimensions.get('screen').width
-
 
 export default function AppProvider ({ children }) {
 	return (

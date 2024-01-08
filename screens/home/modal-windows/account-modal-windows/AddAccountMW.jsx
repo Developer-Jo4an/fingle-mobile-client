@@ -8,8 +8,8 @@ import TransparentLoaderStyles from '../../../../components/loaders/transparent-
 
 import axios from 'axios'
 import { useHomeContext } from '../../general/HomeProvider'
-import { getCommonPath, userId } from '../../../../functions/functions'
-import { useAppContext, windowHeight} from '../../../../AppProvider'
+import { getCommonPath, userId, windowHeight } from '../../../../functions/functions'
+import { useAppContext } from '../../../../AppProvider'
 
 import {
 	hideKeyboardLogic,

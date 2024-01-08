@@ -4,6 +4,7 @@ import TileHeader from '../../../components/tile-header/TileHeader'
 import AddBtn from '../../../UI/add-btns/add-btn/AddBtn'
 import HorizontalSlider from '../../../components/sliders/horizontal-slider/HorizontalSlider'
 import ModalWindowCenter from '../../../components/modal-windows/modal-window-center/ModalWindowCenter'
+import ModalWindowBottom from '../../../components/modal-windows/modal-window-bottom/ModalWindowBottom'
 import AddBudgetMW from '../modal-windows/budget-modal-windows/AddBudgetMW'
 
 import { useAppContext } from '../../../AppProvider'
@@ -42,7 +43,7 @@ const Budgets = () => {
 				:
 				<View></View>
 			}
-			<ModalWindowCenter visible={ addBudgetMW }><AddBudgetMW/></ModalWindowCenter>
+			<ModalWindowBottom visible={ addBudgetMW }><AddBudgetMW/></ModalWindowBottom>
 		</Tile>
 	)
 }
